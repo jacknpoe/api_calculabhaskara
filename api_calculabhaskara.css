@@ -1,0 +1,17 @@
+body{
+    font: normal 16pt Verdana;
+    color: green;
+}
+input{
+    font: normal 16pt Verdana;
+    width: 60px;
+}
+div#res{
+    margin-top: 20px;
+}
+@media (prefers-color-scheme: dark) { 
+  body{
+     color: #fff;
+     background-color: #111;
+  }
+}

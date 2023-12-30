@@ -3,6 +3,7 @@
 // Objetivo: consome a API de retorno de JSON com o resultado da fórmula de Bhaskara
 // Alterações:
 // 0.1   29/12/2023 - primeira implementação
+// 0.2   30/12/2023 - aceita apenas núneros, - e "," nos inputs
 
 const tn1 = window.document.getElementById("txtn1")
 const tn2 = window.document.getElementById("txtn2")
@@ -43,4 +44,28 @@ botao.addEventListener("click", (evt) => {
     .then(res => {
         resultado.innerHTML = `Resultado: ${res}`;
     })
+})
+
+tn1.addEventListener("keypress", (evt) => {
+    const permitidas = "0123456789,";
+    console.log
+    if(!permitidas.includes(evt.key)){
+        evt.preventDefault();
+    }
+})
+
+tn2.addEventListener("keypress", (evt) => {
+    const permitidas = "0123456789,";
+    console.log
+    if(!permitidas.includes(evt.key)){
+        evt.preventDefault();
+    }
+})
+
+tn3.addEventListener("keypress", (evt) => {
+    const permitidas = "0123456789,";
+    console.log
+    if(!permitidas.includes(evt.key)){
+        evt.preventDefault();
+    }
 })

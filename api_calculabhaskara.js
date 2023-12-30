@@ -25,6 +25,24 @@ botao.addEventListener("click", (evt) => {
     var num_b = Number.parseFloat( txt_b);
     var num_c = Number.parseFloat( txt_c);
 
+    if( isNaN(num_a)) {
+        alert("O valor de a não é um número!");
+        tn1.focus();
+        return;
+    }
+
+    if( isNaN(num_b)) {
+        alert("O valor de b não é um número!");
+        tn2.focus();
+        return;
+    }
+
+    if( isNaN(num_c)) {
+        alert("O valor de c não é um número!");
+        tn3.focus();
+        return;
+    }
+
     // dados enviados para a API (a, b, c)
     const dados = {
         valor_a: num_a,

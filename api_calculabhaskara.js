@@ -47,7 +47,7 @@ botao.addEventListener("click", (evt) => {
 })
 
 tn1.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,";
+    const permitidas = "0123456789,-";
     console.log
     if(!permitidas.includes(evt.key)){
         evt.preventDefault();
@@ -55,7 +55,7 @@ tn1.addEventListener("keypress", (evt) => {
 })
 
 tn2.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,";
+    const permitidas = "0123456789,-";
     console.log
     if(!permitidas.includes(evt.key)){
         evt.preventDefault();
@@ -63,7 +63,7 @@ tn2.addEventListener("keypress", (evt) => {
 })
 
 tn3.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,";
+    const permitidas = "0123456789,-";
     console.log
     if(!permitidas.includes(evt.key)){
         evt.preventDefault();

@@ -4,6 +4,7 @@
 // Alterações:
 // 0.1   29/12/2023 - primeira implementação
 // 0.2   30/12/2023 - aceita apenas núneros, - e "," nos inputs
+// 0.3   30/12/2023 - verifica isNaN e simplificado o código para coversão em float
 
 const tn1 = window.document.getElementById("txtn1")
 const tn2 = window.document.getElementById("txtn2")
@@ -12,19 +13,12 @@ const resultado = window.document.getElementById("res")
 const botao = window.document.getElementById("botao")
 
 botao.addEventListener("click", (evt) => {
-    var txt_a = tn1.value;
-    var txt_b = tn2.value;
-    var txt_c = tn3.value;
-    txt_a = txt_a.replace(/,/g, ".");
-    txt_b = txt_b.replace(/,/g, ".");
-    txt_c = txt_c.replace(/,/g, ".");
-    txt_a = txt_a.replace(/ /g, "");
-    txt_b = txt_b.replace(/ /g, "");
-    txt_c = txt_c.replace(/ /g, "");
-    var num_a = Number.parseFloat( txt_a);
-    var num_b = Number.parseFloat( txt_b);
-    var num_c = Number.parseFloat( txt_c);
+    // converte em float, trocando vírgula por ponto antes
+    var num_a = Number.parseFloat( tn1.value.replace(",", "."));
+    var num_b = Number.parseFloat( tn2.value.replace(",", "."));
+    var num_c = Number.parseFloat( tn3.value.replace(",", "."));
 
+    // avalia se a, b e c são realmente números, para não travar o script
     if( isNaN(num_a)) {
         alert("O valor de a não é um número!");
         tn1.focus();

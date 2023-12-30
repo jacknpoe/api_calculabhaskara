@@ -5,6 +5,7 @@
 // 0.1   29/12/2023 - primeira implementação
 // 0.2   30/12/2023 - aceita apenas núneros, - e "," nos inputs
 // 0.3   30/12/2023 - verifica isNaN e simplificado o código para coversão em float
+// 0.4   30/12/2023 - funciona no mobile a limitação
 
 const tn1 = window.document.getElementById("txtn1")
 const tn2 = window.document.getElementById("txtn2")
@@ -60,22 +61,26 @@ botao.addEventListener("click", (evt) => {
 
 // constantes e funções que impedem digitar letras, entre outros
 const permitidas = "0123456789,-";
-const especiais = [65, 66, 68, 69, 84];
 
-tn1.addEventListener("keydown", (evt) => {
-    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
-        evt.preventDefault();
+function mascara(valor){
+    let resultado = "";
+    const tamanho = valor.length;
+    for(let i = 0; i < tamanho; i++){
+        if(permitidas.includes(valor[i])){
+            resultado += valor[i];
+        }
     }
+    return resultado;
+}
+
+tn1.addEventListener("input", (evt) => {
+    tn1.value = mascara(tn1.value)  ;
 })
 
-tn2.addEventListener("keydown", (evt) => {
-    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
-        evt.preventDefault();
-    }
+tn2.addEventListener("input", (evt) => {
+    tn2.value = mascara(tn2.value)  ;
 })
 
-tn3.addEventListener("keydown", (evt) => {
-    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
-        evt.preventDefault();
-    }
+tn3.addEventListener("input", (evt) => {
+    tn3.value = mascara(tn3.value)  ;
 })

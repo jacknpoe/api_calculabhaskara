@@ -58,26 +58,24 @@ botao.addEventListener("click", (evt) => {
     })
 })
 
-tn1.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,-";
-    console.log
-    if(!permitidas.includes(evt.key)){
+// constantes e funções que impedem digitar letras, entre outros
+const permitidas = "0123456789,-";
+const especiais = [65, 66, 68, 69, 84];
+
+tn1.addEventListener("keydown", (evt) => {
+    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
         evt.preventDefault();
     }
 })
 
-tn2.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,-";
-    console.log
-    if(!permitidas.includes(evt.key)){
+tn2.addEventListener("keydown", (evt) => {
+    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
         evt.preventDefault();
     }
 })
 
-tn3.addEventListener("keypress", (evt) => {
-    const permitidas = "0123456789,-";
-    console.log
-    if(!permitidas.includes(evt.key)){
+tn3.addEventListener("keydown", (evt) => {
+    if( ! ( permitidas.includes(evt.key) || especiais.indexOf( evt.key.charCodeAt(0)) >= 0 ) ){
         evt.preventDefault();
     }
 })

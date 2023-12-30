@@ -1,14 +1,15 @@
 body{
-    font: normal 16pt Verdana;
+    font: normal 13pt Verdana;
     color: green;
 }
 input{
-    font: normal 16pt Verdana;
-    width: 60px;
+    font: normal 13pt Verdana;
+    width: 50px;
 }
 div#res{
     margin-top: 20px;
 }
+/* modo escuro */
 @media (prefers-color-scheme: dark) { 
   body{
      color: #fff;
